@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Syafia's World</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('homepage-background.jpg') center/cover no-repeat, 
+                        linear-gradient(135deg, #F8B5D4, #D4A6D8, #F2B4A8); /* Add background image */
+            background-size: cover;
+            animation: gradientAnimation 15s ease infinite; /* Smooth gradient transition */
+            color: #333;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Smooth gradient animation */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Subtle floral pattern overlay */
+        .pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px; /* Small floral pattern */
+            pointer-events: none; /* Pattern doesn’t block clicks */
+            z-index: 0;
+        }
+
+        /* Navigation bar styling */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #c95f5f;
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .navbar a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #f0d6dc;
+        }
+
+        /* Main content container */
+        .content {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            margin-top: 80px;
+            padding: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 1;
+        }
+
+        /* Profile section on the left with larger image and nickname */
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile img {
+            width: 150px; /* Reduced size */
+            height: 150px; /* Reduced size */
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #c95f5f;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-right: 15px;
+        }
+
+        .nickname {
+            font-size: 36px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Larger General Information Box below the profile image */
+        .info-box {
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 450px;
+            text-align: left;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .info-box h2 {
+            font-size: 24px;
+            color: #c95f5f;
+            margin: 0 0 10px 0;
+        }
+
+        .info-box p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        /* Photo frames on the right side */
+        .photo-frames {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .photo-frame {
+            width: 180px; /* Smaller image size */
+            height: 180px; /* Smaller image size */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Floating bubbles in the background */
+        .floating-bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            animation: float 6s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .floating-bubble:nth-child(1) {
+            width: 60px;
+            height: 60px;
+            top: 10%;
+            left: 15%;
+            animation-duration: 8s;
+        }
+
+        .floating-bubble:nth-child(2) {
+            width: 80px;
+            height: 80px;
+            top: 40%;
+            left: 70%;
+            animation-duration: 7s;
+        }
+
+        .floating-bubble:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 65%;
+            left: 20%;
+            animation-duration: 9s;
+        }
+
+        .floating-bubble:nth-child(4) {
+            width: 50px;
+            height: 50px;
+            top: 85%;
+            left: 50%;
+            animation-duration: 6s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-20px) scale(1.2);
+            }
+            100% {
+                transform: translateY(0) scale(1);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Floral Pattern Overlay -->
+    <div class="pattern"></div>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="homepage.html">Home</a>
+        <a href="photos.html">Photos</a>
+        <a href="about.html">About Me</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Profile on the left with larger image and nickname beside -->
+        <div class="profile-section">
+            <div class="profile">
+                <img src="homepagepic1.jpg" alt="Picture of Syafia">
+                <div class="nickname">Syafia</div>
+            </div>
+
+            <!-- General Information Box below profile image -->
+            <div class="info-box">
+                <h2>General Information</h2>
+                <p><strong>Full Name:</strong> Nur Aisyah Sofia Binti Hazizi</p>
+                <p><strong>Nickname:</strong> Syafia</p>
+                <p><strong>Address:</strong> Ampang, Kuala Lumpur</p>
+                <p><strong>Date of Birth:</strong> 23 December 2024</p>
+                <p><strong>Nationality:</strong> Malaysia</p>
+                <p><strong>Status:</strong> Single</p>
+                <p><strong>Occupation:</strong> Student at UiTM Rembau</p>
+                <p><strong>E-mail Address:</strong> aisyahsofia2312@gmail.com</p>
+            </div>
+        </div>
+
+        <!-- Photo Frames on the right side -->
+        <div class="photo-frames">
+            <div class="photo-frame"><img src="homepagepic2.jpg" alt="Small Picture 1"></div>
+            <div class="photo-frame"><img src="homepagepic3.jpg" alt="Small Picture 2"></div>
+            <div class="photo-frame"><img src="homepagepic4.jpg" alt="Small Picture 3"></div>
+        </div>
+    </div>
+
+    <!-- Floating Bubbles -->
+    <div class="floating-bubble"></div>
+    <div class="floating-bubble"></div>
+    <div class="floating-bubble"></div>
+    <div class="floating-bubble"></div>
+
+</body>
+</html>

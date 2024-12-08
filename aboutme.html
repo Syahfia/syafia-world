@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, rgba(248, 181, 212, 0.8), rgba(212, 166, 216, 0.8), rgba(242, 180, 168, 0.8)),
+                        url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-blend-mode: overlay;
+            animation: gradientAnimation 15s ease infinite;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(201, 95, 95, 0.9); /* Slight transparency */
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .navbar a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #f0d6dc;
+        }
+
+        /* Main container */
+        h1 {
+            margin-top: 100px;
+            font-size: 2.5rem;
+            color: #c95f5f;
+        }
+
+        /* Buttons container */
+        .buttons-container a {
+            display: inline-block;
+            background-color: #c95f5f;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .buttons-container a:hover {
+            background-color: #f0d6dc;
+        }
+
+        /* Content sections */
+        .content-section {
+            display: none;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .content-section:target {
+            display: block;
+        }
+
+        .content-section h2 {
+            color: #c95f5f;
+        }
+
+        .content-section img, .flex-item img {
+            width: 300px; /* Consistent width */
+            height: 300px; /* Consistent height */
+            object-fit: cover; /* Maintain aspect ratio while filling the frame */
+            border-radius: 10px; /* Rounded corners */
+            margin-top: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content-section ul {
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .content-section a {
+            color: #c95f5f;
+            text-decoration: none;
+        }
+
+        .content-section a:hover {
+            text-decoration: underline;
+        }
+
+        /* Flex container for side-by-side items */
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px; /* Adjust spacing between items */
+            margin-top: 20px;
+        }
+
+        /* Flex items (individual blocks) */
+        .flex-item {
+            flex: 1; /* Allow items to expand equally */
+            max-width: 48%; /* Limit the width of each item */
+            text-align: center; /* Center-align content */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="homepage.html">Home</a>
+        <a href="photos.html">Photos</a>
+        <a href="aboutme.html">About Me</a>
+    </div>
+
+    <!-- Main Content -->
+    <h1>About Me</h1>
+    <div class="buttons-container">
+        <a href="#hobby">Hobby</a>
+        <a href="#experience">Experience</a>
+        <a href="#family">Family</a>
+        <a href="#education">Education</a>
+        <a href="#myspace">Myspace</a>
+        <a href="#socialMedia">Social Media</a>
+    </div>
+
+    <!-- Content Sections -->
+    <div id="hobby" class="content-section">
+        <h2>Hobby</h2>
+        <p>I love listening to music during my free time.</p>
+        <img src="hobby.jpg" alt="Music 4 life">
+    </div>
+    <div id="experience" class="content-section">
+        <h2>Experience</h2>
+        <p>My experience is I have done my internship at Felda Investment Corporation for 2 months and I was assigned for Information Technology department.</p>
+        <img src="experience.jpg" alt="Information Technology">
+    </div>
+    <div id="family" class="content-section">
+        <h2>Family</h2>
+        <p>Welcome! This page is specifically where I share about my family members.</p>
+        
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>Ayah</h3>
+                <p>The person in the picture is my father, Hazizi Bin Hassan, who was born in 1966 at Kampar, Perak.</p>
+                <img src="father.jpg" alt="Father">
+            </div>
+            <div class="flex-item">
+                <h3>Ibu</h3>
+                <p>The person in the picture is my mother, Najlah Binti Abdul Wahab, who was born in 1966 at Sungkai, Perak.</p>
+                <img src="mother.jpg" alt="Mother">
+            </div>
+        </div>
+    
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>KakLong</h3>
+                <p>My first sister, Nurul Asyiqin Binti Hazizi, was born in 1994 in Kuala Lumpur. She works in a government company at Putrajaya.</p>
+                <img src="kaklong.jpg" alt="First Sister">
+            </div>
+            <div class="flex-item">
+                <h3>Abang Faris</h3>
+                <p>My brother-in-law, Faris Safuan and  was born in 1994. He is my sister's husband and the father of my beautiful and cute niece.</p>
+                <img src="abangfaris.jpg" alt="Brother-in-law">
+            </div>
+        </div>
+    
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>KakNgah</h3>
+                <p>My second sister, Nur Alia Aily Binti Hazizi, was born in 1996 in Kuala Lumpur. She currently works at Wangsa Maju Military Cooperative.</p>
+                <img src="kakngah.jpg" alt="Second Sister">
+            </div>
+            <div class="flex-item">
+                <h3>Ain</h3>
+                <p>My third sister, Nur Ain Natasha Binti Hazizi, was born in 2001 in Kuala Lumpur. She works at Koperasi Felda Sdn. Bhd. and is pursuing a degree part-time at UiTM Puncak Perdana.</p>
+                <img src="ain.jpg" alt="Third Sister">
+            </div>
+        </div>
+    
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>Aisyah</h3>
+                <p>This is me, Nur Aisyah Sofia Binti Hazizi, born in 2004 in Kuala Lumpur. I am the youngest of four siblings and a Diploma student in Information Management at UiTM Rembau.</p>
+                <img src="aisyah.jpg" alt="Me">
+            </div>
+            <div class="flex-item">
+                <h3>Airis Farisha</h3>
+                <p>My niece, Airis Farisha Binti Faris Safuan, was born in 2021 in Putrajaya. She is the first grandchild of my parents and is now 3 years old.</p>
+                <img src="airis.jpg" alt="Niece">
+            </div>
+        </div>
+    </div>    
+    </div>
+    <div id="education" class="content-section">
+        <h2>Education</h2>
+        <p>Welcome! This page is specifically where I tell about my education from kindergarten to university.</p>
+    
+        <div class="education-item">
+            <h3>Kindergarten</h3>
+            <p>When I was 3 years old, my parents sent me to Semai Bakti Felda Kindergarten, which operates at Anjung Felda, Kuala Lumpur. I studied there from 2007 to 2010.</p>
+            <img src="kindergarten.jpg" alt="Kindergarten Photo">
+        </div>
+    
+        <div class="education-item">
+            <h3>Primary School</h3>
+            <p>When I entered the 1st grade, I was admitted to Sekolah Kebangsaan Jalan Gurney 1 in Kampung Datuk Keramat, Kuala Lumpur. I studied there for 6 years, from 2011 to 2016.</p>
+            <img src="primaryschool.jpg" alt="Primary School Photo">
+        </div>
+    
+        <div class="education-item">
+            <h3>Religious School</h3>
+            <p>When I entered the 1st grade, apart from the national school, I was also admitted to Sekolah Rendah Agama Al-Alusi in Kampung Datuk Keramat, Kuala Lumpur. I studied there for 6 years, from 2011 to 2016.</p>
+            <img src="religiousschool.jpg" alt="Religious School Photo">
+        </div>
+    
+        <div class="education-item">
+            <h3>High School</h3>
+            <p>After I finished primary school, I was registered to continue at Sekolah Menengah Kebangsaan Puteri Ampang in Ampang, Kampung Datok Keramat, Kuala Lumpur. I attended this school from 2017 until 2022.</p>
+            <img src="highschool.jpg" alt="High School Photo">
+        </div>
+    </div>
+    
+    <div id="myspace" class="content-section">
+        <h2>Myspace</h2>
+        <p>Welcome! This is my personal space where I describe my favorite things.</p>
+        
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>My Favorite Singer</h3>
+                <p>Well my favorite singer before this was Ailee from Korea but now I really love Lyodra from Indonesia .</p>
+                <img src="singer.jpg" alt="Lyodra">
+            </div>
+            <div class="flex-item">
+                <h3>My Favorite Food</h3>
+                <p>My favorite food is spicy, and I choose Ayam Gepuk Pak Gembus as my favorite dish.</p>
+                <img src="food.jpg" alt="Ayam Gepuk">
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>My Favorite Drink</h3>
+                <p>My favorite drink since childhood is ice chocolate. It's my go-to drink!</p>
+                <img src="drink.jpg" alt="Chocolate">
+            </div>
+            <div class="flex-item">
+                <h3>My Favorite Pet</h3>
+                <p>I don't have any pets at home, but I really like cats. I also often take photos of street cats as memories.</p>
+                <img src="pet.jpg" alt="Cat">
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>My Favorite Colour</h3>
+                <p>My favorite colour is pink, because the colour is very cute for me.</p>
+                <img src="colour.jpg" alt="Pink">
+            </div>
+            <div class="flex-item">
+                <h3>My Favorite Flower</h3>
+                <p>My favorite flower is pink rose, because the pink roses represent sweetness, femininity, appreciation, and admiration.</p>
+                <img src="flower.jpg" alt="flower">
+            </div>
+        </div>
+    </div>
+    <div id="socialMedia" class="content-section">
+        <h2>Social Media</h2>
+        <p>Follow me on:</p>
+        <ul>
+            <li><a href="https://www.instagram.com/sofiahazizi" target="_blank">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@javachiplov" target="_blank">TikTok</a></li>
+            <li><a href="https://open.spotify.com/user/31q7ps4m3hsfdk24z2iyxt6melcu?si=PNT8bfa4TIaG_Alb_o1MTQ" target="_blank">Spotify</a></li>
+        </ul>
+    </div>
+</body>
+</html>

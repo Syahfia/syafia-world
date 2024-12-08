@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos - Syafia's World</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, rgba(248, 181, 212, 0.8), rgba(212, 166, 216, 0.8), rgba(242, 180, 168, 0.8)),
+                        url('background-photo.jpg') no-repeat center center fixed; /* Add background image */
+            background-size: cover; /* Make the image cover the whole page */
+            background-blend-mode: overlay; /* Blend the gradient with the image */
+            animation: gradientAnimation 15s ease infinite;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(201, 95, 95, 0.9); /* Slight transparency */
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .navbar a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #f0d6dc;
+        }
+
+        /* Main content */
+        .photo-container {
+            margin-top: 100px;
+            text-align: center;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .photo-grid {
+            display: none; /* Hide all grids initially */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .photo-frame {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-frame img, .photo-frame video {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Category Buttons */
+        .buttons {
+            margin: 20px 0;
+        }
+
+        .button {
+            background-color: #c95f5f;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #f0d6dc;
+        }
+
+        /* Link to About Me */
+        .about-link {
+            margin-top: 30px;
+        }
+
+        .about-link a {
+            text-decoration: none;
+            color: white;
+            background-color: #c95f5f;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .about-link a:hover {
+            background-color: #f0d6dc;
+        }
+
+        /* Fade-in effect */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="homepage.html">Home</a>
+        <a href="photos.html">Photos</a>
+        <a href="aboutme.html">About Me</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="photo-container">
+        <h1>Syafia's Photo Gallery</h1>
+        <div class="buttons">
+            <button class="button" onclick="filterSelection('myself')">Myself</button>
+            <button class="button" onclick="filterSelection('plus1')">Plus 1</button>
+            <button class="button" onclick="filterSelection('family')">My Family</button>
+            <button class="button" onclick="filterSelection('friend')">My Friends</button>
+        </div>
+
+        <!-- Photo Grids -->
+        <div class="photo-grid myself">
+            <div class="photo-frame"><img src="myself1.jpg" alt="Myself Picture 1"></div>
+            <div class="photo-frame"><img src="myself2.jpg" alt="Myself Picture 2"></div>
+            <div class="photo-frame"><img src="myself3.jpg" alt="Myself Picture 3"></div>
+            <div class="photo-frame"><img src="myself4.jpg" alt="Myself Picture 4"></div>
+            <div class="photo-frame"><video src="myself-video.mp4" controls></video></div>
+        </div>
+
+        <div class="photo-grid plus1">
+            <div class="photo-frame"><img src="plus1-1.jpg" alt="Plus 1 Picture 1"></div>
+            <div class="photo-frame"><img src="plus1-2.jpg" alt="Plus 1 Picture 2"></div>
+            <div class="photo-frame"><img src="plus1-3.jpg" alt="Plus 1 Picture 3"></div>
+            <div class="photo-frame"><img src="plus1-4.jpg" alt="Plus 1 Picture 4"></div>
+            <div class="photo-frame"><video src="plus1-video.mp4" controls></video></div>
+        </div>
+
+        <div class="photo-grid family">
+            <div class="photo-frame"><img src="family1.jpg" alt="Family Picture 1"></div>
+            <div class="photo-frame"><img src="family2.jpg" alt="Family Picture 2"></div>
+            <div class="photo-frame"><img src="family3.jpg" alt="Family Picture 3"></div>
+            <div class="photo-frame"><img src="family4.jpg" alt="Family Picture 4"></div>
+            <div class="photo-frame"><video src="family-video.mp4" controls></video></div>
+        </div>
+
+        <div class="photo-grid friend">
+            <div class="photo-frame"><img src="friend1.jpg" alt="Friend Picture 1"></div>
+            <div class="photo-frame"><img src="friend2.jpg" alt="Friend Picture 2"></div>
+            <div class="photo-frame"><img src="friend3.jpg" alt="Friend Picture 3"></div>
+            <div class="photo-frame"><img src="friend4.jpg" alt="Friend Picture 4"></div>
+            <div class="photo-frame"><video src="friend-video.mp4" controls></video></div>
+        </div>
+
+        <!-- Link to About Me -->
+        <div class="about-link">
+            <a href="aboutme.html">Learn More About Me</a>
+        </div>
+    </div>
+    <script>
+        function filterSelection(category) {
+            // Get all photo grids
+            const grids = document.querySelectorAll('.photo-grid');
+
+            // Hide all grids and remove the fade-in effect
+            grids.forEach(grid => {
+                grid.style.display = 'none';
+                grid.classList.remove('fade-in');
+            });
+
+            // Show the selected grid with a fade-in effect
+            const selectedGrid = document.querySelector(`.${category}`);
+            if (selectedGrid) {
+                selectedGrid.style.display = 'grid';
+                setTimeout(() => selectedGrid.classList.add('fade-in'), 10);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Syafia's World</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #F8B5D4, #D4A6D8, #F2B4A8); /* Soft pastel gradient */
+            background-size: 300% 300%; /* To give the gradient a smooth transition */
+            animation: gradientAnimation 15s ease infinite; /* Animation for smooth gradient shift */
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Smooth gradient animation */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Decorative geometric pattern */
+        .pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px; /* Small geometric pattern */
+            pointer-events: none; /* Ensures pattern doesn’t block clicks */
+            z-index: 0;
+        }
+
+        /* Floating bubbles in the background */
+        .floating-bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            animation: float 6s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .floating-bubble:nth-child(1) {
+            width: 60px;
+            height: 60px;
+            top: 10%;
+            left: 15%;
+            animation-duration: 8s;
+        }
+
+        .floating-bubble:nth-child(2) {
+            width: 80px;
+            height: 80px;
+            top: 40%;
+            left: 70%;
+            animation-duration: 7s;
+        }
+
+        .floating-bubble:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 65%;
+            left: 20%;
+            animation-duration: 9s;
+        }
+
+        .floating-bubble:nth-child(4) {
+            width: 50px;
+            height: 50px;
+            top: 85%;
+            left: 50%;
+            animation-duration: 6s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-20px) scale(1.2);
+            }
+            100% {
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #dd224e;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            z-index: 1; /* Places image above decorative elements */
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            z-index: 1;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #d85dd2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        button:hover {
+            background-color: #eb7fa3;
+        }
+    </style>
+</head>
+<body>
+    <div class="pattern"></div> <!-- Geometric background pattern -->
+    <!-- Floating bubbles -->
+    <div class="floating-bubble"></div>
+    <div class="floating-bubble"></div>
+    <div class="floating-bubble"></div>
+    <div class="floating-bubble"></div>
+    
+    <img src="welcomepagepic.jpg" alt="Picture of Syafia">
+    <h1>WELCOME TO SYAFIA'S WORLD</h1>
+    <button onclick="window.location.href='homepage.html'">STARTED</button>
+</body>
+</html>
